@@ -6,6 +6,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="output.css" rel="stylesheet">
     <link rel="stylesheet" href="script.js">
+
+    <link rel="icon" type="image/png" href="imgs/favico.png">
     <title>FESTEJA</title>
 </head>
 <body class="h-screen flex items-center justify-center bg-orange-50">
@@ -16,9 +18,9 @@
             <form class="flex flex-col gap-4">
                 <input class="p-2 border border-gray rounded-sm" type="email" name="Email" placeholder="Email" required>
                 <input class="p-2 border border-gray rounded-sm" type="password" name="Password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700">Login</button>
+                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Login</a></button>
                 <p>Não tem uma conta? 
-                    <a href="#" onclick="showForm('register-form'); return false;" class="text-orange-600 font-semibold hover:underline">Registre-se Agora!</a>
+                    <a href="home.html" onclick="showForm('register-form'); return false;" class="text-orange-600 font-semibold hover:underline">Registre-se Agora!</a>
                 </p>
             </form>
         </div>
@@ -32,7 +34,7 @@
                 <input class="p-2 border border-gray rounded-sm" type="text" name="CNPJ" placeholder="CNPJ">
                 <input class="p-2 border border-gray rounded-sm" type="email" name="email" placeholder="Email" required>
                 <input class="p-2 border border-gray rounded-sm" type="password" name="password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700">Registrar</button>
+                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Registrar</a></button>
                 <p>Já tem uma conta? 
                     <a href="#" onclick="showForm('login-form'); return false;" class="text-orange-600 font-semibold hover:underline">Faça login!</a>
                 </p>
@@ -42,18 +44,18 @@
 
         <!-- js -->
           <script>
-    function showForm(formId) {
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
+            function showForm(formId) {
+                const loginForm = document.getElementById('login-form');
+                const registerForm = document.getElementById('register-form');
 
-        if(formId === 'login-form') {
-            loginForm.classList.remove('hidden');
-            registerForm.classList.add('hidden');
-        } else {
-            registerForm.classList.remove('hidden');
-            loginForm.classList.add('hidden');
-        }
-    }
-    </script>
+                if(formId === 'login-form') {
+                    loginForm.classList.remove('hidden');
+                    registerForm.classList.add('hidden');
+                } else {
+                    registerForm.classList.remove('hidden');
+                    loginForm.classList.add('hidden');
+                }
+            }
+        </script>
 </body>
-</html>
+</html>>>
