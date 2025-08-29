@@ -47,23 +47,23 @@
         </div>
     </div>
 
-    <!-- SCRIPT -->
+    <!-- script -->
     <script>
         const openModal = document.getElementById("openModal");
         const closeModal = document.getElementById("closeModal");
         const modal = document.getElementById("modal");
 
-        // Abrir modal
+        // open modal
         openModal.addEventListener("click", () => {
             modal.classList.remove("hidden");
         });
 
-        // Fechar modal
+        // close modal
         closeModal.addEventListener("click", () => {
             modal.classList.add("hidden");
         });
 
-        // Fechar clicando fora do conteúdo do modal
+        // close modal on outside click
         window.addEventListener("click", (e) => {
             if (e.target === modal) {
                 modal.classList.add("hidden");
@@ -72,3 +72,4 @@
     </script>
 </body>
 </html>
+
