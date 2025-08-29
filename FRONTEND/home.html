@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTEJA</title>
+
+    <!-- links -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="script.js">
+</head>
+<body class="m-8 h-screen items-center justify-center bg-orange-50">
+    <header class="mt-4 mb-6 list-none w-1/2 mx-auto">
+        <nav class="flex bg-orange-600 text-orange-50 gap-6 justify-between p-4 rounded-md">
+            <li class="font-semibold"><a href="">Meus Eventos</a></li>
+            <li class="hover:font-semibold"><a href="index.html">Sair</a></li>
+        </nav>
+    </header>
+
+    <!-- content -->
+    <div id="openModal" class="m-8">
+        <h2 class="text-2xl font-semibold mb-4">Meus Eventos</h2>
+        <div class="w-1/2 mx-auto">
+            <h3 class="mb-4">Você não tem mais eventos, registre um evento!</h3>
+            <button class="bg-orange-600 p-3 rounded-md hover:bg-orange-700"><i class="bi bi-plus-circle mr-2 text-orange-50 font-semibold"></i><a href="" class="font-semibold text-orange-50 items-center">Registrar</a></button>
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg w-[400px] shadow-lg relative">
+            <!-- BOTÃO FECHAR -->
+            <button id="closeModal" class="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-2xl">×</button>
+            <h2 class="text-xl font-semibold mb-4 text-orange-600">Registrar Evento</h2>
+            <form id="eventForm" class="space-y-3">
+                <input type="text" placeholder="Nome do evento" class="w-full p-2 border rounded-md" required>
+                <input type="date" class="w-full p-2 border rounded-md" required>
+                <input type="time" class="w-full p-2 border rounded-md" required>
+                <input type="text" placeholder="Local" class="w-full p-2 border rounded-md" required>
+                <textarea placeholder="Descrição" class="w-full p-2 border rounded-md"></textarea>
+                <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white w-full py-2 rounded-md transition">
+                    Salvar Evento
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+        const modal = document.getElementById("modal");
+
+        // Abrir modal
+        openModal.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+        });
+
+        // Fechar modal
+        closeModal.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+
+        // Fechar clicando fora do conteúdo do modal
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.add("hidden");
+            }
+        });
+    </script>
+</body>
+</html>
