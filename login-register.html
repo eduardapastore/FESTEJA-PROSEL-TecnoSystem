@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="Scripts/login-register.js" defer></script>
     <link href="output.css" rel="stylesheet">
-    <link rel="stylesheet" href="script.js">
+    
 
     <link rel="icon" type="image/png" href="imgs/favico.png">
     <title>FESTEJA</title>
@@ -16,9 +17,9 @@
         <div id="login-form" class="form-box p-6 m-8 bg-white border rounded-lg text-center">
             <h2 class="text-black text-2xl font-bold mb-6">Login</h2>
             <form class="flex flex-col gap-4">
-                <input class="p-2 border border-gray rounded-sm" type="email" name="Email" placeholder="Email" required>
-                <input class="p-2 border border-gray rounded-sm" type="password" name="Password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Login</a></button>
+                <input id="emailLogin" class="p-2 border border-gray rounded-sm" type="email" name="Email" placeholder="Email" required>
+                <input id ="senhaLogin" class="p-2 border border-gray rounded-sm" type="password" name="Password" placeholder="Senha" required>
+                <button type="submit" id = "botaoLogin" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Login</a></button>
                 <p>Não tem uma conta? 
                     <a href="login-register.html" onclick="showForm('register-form'); return false;" class="text-orange-600 font-semibold hover:underline">Registre-se Agora!</a>
                 </p>
@@ -30,11 +31,11 @@
             <h2 class="text-black text-2xl font-bold mb-6">Registre-se</h2>
 
             <form class="flex flex-col gap-4">
-                <input class="p-2 border border-gray rounded-sm" type="text" name="name" placeholder="Nome" required>
-                <input class="p-2 border border-gray rounded-sm" type="text" name="CNPJ" placeholder="CNPJ">
-                <input class="p-2 border border-gray rounded-sm" type="email" name="email" placeholder="Email" required>
-                <input class="p-2 border border-gray rounded-sm" type="password" name="password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Registrar</a></button>
+                <input id = "name" class="p-2 border border-gray rounded-sm" type="text" name="name" placeholder="Nome" required>
+                <input id = "CNPJ" class="p-2 border border-gray rounded-sm" type="text" name="CNPJ" placeholder="CNPJ">
+                <input id = "email" class="p-2 border border-gray rounded-sm" type="email" name="email" placeholder="Email" required>
+                <input id = "senha" class="p-2 border border-gray rounded-sm" type="password" name="password" placeholder="Senha" required>
+                <button type="submit" id = "botaoRegistrar" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Registrar</a></button>
                 <p>Já tem uma conta? 
                     <a href="#" onclick="showForm('login-form'); return false;" class="text-orange-600 font-semibold hover:underline">Faça login!</a>
                 </p>
