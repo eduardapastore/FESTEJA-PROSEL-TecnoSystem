@@ -12,50 +12,85 @@
 </head>
 <body class="h-screen flex items-center justify-center bg-orange-50">
 
-        <!-- login -->
-        <div id="login-form" class="form-box p-6 m-8 bg-white border rounded-lg text-center">
-            <h2 class="text-black text-2xl font-bold mb-6">Login</h2>
-            <form class="flex flex-col gap-4">
-                <input class="p-2 border border-gray rounded-sm" type="email" name="Email" placeholder="Email" required>
-                <input class="p-2 border border-gray rounded-sm" type="password" name="Password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Login</a></button>
-                <p>Não tem uma conta? 
-                    <a href="home.html" onclick="showForm('register-form'); return false;" class="text-orange-600 font-semibold hover:underline">Registre-se Agora!</a>
-                </p>
-            </form>
-        </div>
+    <!-- login -->
+    <div id="login-form" class="form-box p-6 m-8 bg-white border rounded-lg text-center">
+        <h2 class="text-black text-2xl font-bold mb-6">Login</h2>
+        <form class="flex flex-col gap-4">
+            <input class="p-2 border border-gray rounded-sm" type="email" name="Email" placeholder="Email" required>
+            <input class="p-2 border border-gray rounded-sm" type="password" name="Password" placeholder="Senha" required>
+            <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700">
+                <a href="home.html">Login</a>
+            </button>
+            <p>Não tem uma conta? 
+                <a href="home.html" onclick="showForm('register-form'); return false;" class="text-orange-600 font-semibold hover:underline">Registre-se Agora!</a>
+            </p>
+        </form>
+    </div>
 
-        <!-- register -->
-        <div id="register-form" class="form-box hidden p-6 m-8 bg-white border rounded-lg text-center">
-            <h2 class="text-black text-2xl font-bold mb-6">Registre-se</h2>
+    <!-- register -->
+    <div id="register-form" class="form-box hidden p-6 m-8 bg-white border rounded-lg text-center">
+        <h2 class="text-black text-2xl font-bold mb-6">Registre-se</h2>
 
-            <form class="flex flex-col gap-4">
-                <input class="p-2 border border-gray rounded-sm" type="text" name="name" placeholder="Nome" required>
-                <input class="p-2 border border-gray rounded-sm" type="text" name="CNPJ" placeholder="CNPJ">
-                <input class="p-2 border border-gray rounded-sm" type="email" name="email" placeholder="Email" required>
-                <input class="p-2 border border-gray rounded-sm" type="password" name="password" placeholder="Senha" required>
-                <button type="submit" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700"><a href="home.html">Registrar</a></button>
-                <p>Já tem uma conta? 
-                    <a href="#" onclick="showForm('login-form'); return false;" class="text-orange-600 font-semibold hover:underline">Faça login!</a>
-                </p>
-            </form>
-        </div>
+        <form class="flex flex-col gap-4">
+            <input class="p-2 border border-gray rounded-sm" type="text" name="name" placeholder="Nome" required>
+            <input class="p-2 border border-gray rounded-sm" type="text" name="CNPJ" placeholder="CNPJ">
+            <input class="p-2 border border-gray rounded-sm" type="email" name="email" placeholder="Email" required>
+            <input class="p-2 border border-gray rounded-sm" type="password" name="password" placeholder="Senha" required>
 
+            <!-- chama a função de validação -->
+            <button type="submit" onclick="registrarUsuario(event)" class="max-w-xs w-full text-white bg-orange-600 p-2 rounded-md hover:bg-orange-700">
+                <a href="home.html">Registrar</a>
+            </button>
+            <p>Já tem uma conta? 
+                <a href="#" onclick="showForm('login-form'); return false;" class="text-orange-600 font-semibold hover:underline">Faça login!</a>
+            </p>
+        </form>
+    </div>
 
-        <!-- js -->
-          <script>
-            function showForm(formId) {
-                const loginForm = document.getElementById('login-form');
-                const registerForm = document.getElementById('register-form');
+    <!-- js -->
+    <script>
+        // função para alternar formulários
+        function showForm(formId) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
 
-                if(formId === 'login-form') {
-                    loginForm.classList.remove('hidden');
-                    registerForm.classList.add('hidden');
-                } else {
-                    registerForm.classList.remove('hidden');
-                    loginForm.classList.add('hidden');
-                }
+            if(formId === 'login-form') {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            } else {
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
             }
-        </script>
+        }
+
+        // validação de CNPJ repetidos
+        let cnpjsCadastrados = JSON.parse(localStorage.getItem("cnpjsCadastrados")) || [];
+
+        function registrarUsuario(event) {
+            event.preventDefault();
+
+            const cnpjInput = document.querySelector("#register-form input[name='CNPJ']");
+            const cnpj = cnpjInput.value.trim();
+
+            if (!cnpj) {
+                alert("⚠️ Informe um CNPJ válido!");
+                return;
+            }
+
+            if (cnpjsCadastrados.includes(cnpj)) {
+                alert("❌ Este CNPJ já foi cadastrado!");
+                return;
+            }
+
+            // adiciona o CNPJ a lista e salva no localStorage
+            cnpjsCadastrados.push(cnpj);
+            localStorage.setItem("cnpjsCadastrados", JSON.stringify(cnpjsCadastrados));
+
+            console.log("CNPJs cadastrados:", cnpjsCadastrados);
+
+            alert("✅ Registro realizado com sucesso!");
+            window.location.href = "home.html";
+        }
+    </script>
 </body>
-</html>>>
+</html>
