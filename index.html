@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTEJA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="script.js">
+
+    <link rel="icon" type="image/png" href="imgs/favico.png">
+</head>
+<body class="m-4">
+    <header class="p-4 flex justify-between items-center">
+        <img src="imgs/logo1.png" alt="" width="100px">
+        <nav class="flex list-none p-2 gap-8 justify-center">
+            <li class="font-semibold"><a href="">Inicio</a></li>
+            <li class="hover:font-semibold"><a href="">Sobre Nós</a></li>
+        </nav>
+        <div class="flex p-2 gap-6">
+            <button><a href="login-register.html">Cadastre-se</a></button>
+            <button class="bg-orange-600 text-orange-50 rounded-md p-3"><a href="login-register#.html"> Login</a></button>
+        </div>
+    </header>
+
+    <!-- hero -->
+    <div id="hero" class="m-10 flex items-center justify-center">
+        <div>
+            <h3 class="font-black text-3xl text-orange-600">FESTEJA CIDADE!</h3>
+            <p class="mb-4">Sua plataforma de anúncio de eventos! Anúncie seus eventos e saiba sobre eventos na sua cidade!</p>
+            <button class="font-black text-orange-50 bg-orange-600 p-2 rounded-sm hover:bg-orange-700"><a href="">Cadastre um Evento</a></button>
+        </div>
+        <img src="imgs/heroimg.png" alt="" width="600">
+    </div>
+
+    <!-- eventos -->
+    <div id="events" class="m-16">
+        <h3 class="text-3xl font-bold mb-8">Saiba os eventos da sua cidade!</h3>
+
+        <div id="musicshows" class="p-4 border rounded-sm mb-6">
+            <h4 class="text-2xl font-semibold mb-4">Música e Shows 🎶</h4>
+            <div id="eventsfromthiscategory" class="flex">
+                <div id="event1" class="flex items-center justify-between">
+                    <div class="w-1/3">
+                        <img src="imgs/events/show.jpg" alt="" class="rounded">
+                        <h4 class="font-semibold">Noite de Rock com Horizonte</h4>
+                        <p>Prepare-se para uma noite inesquecível! A banda Horizonte traz um show eletrizante com os maiores clássicos do rock e novas composições autorais.</p>
+                    </div>
+                    <div id="info">
+                        <p><span class="font-semibold">Horário: </span> 20h00</p>
+                        <p class="mb-4"><span class="font-semibold">Horário: </span>15 de Setembro</p>
+
+                        <button class="p-2 bg-orange-600 text-orange-50 hover:bg-orange-700 rounded-md font-semibold"><a href="">Saiba mais!</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sportsfamilly" class="p-4 border rounded-sm mb-6">
+            <h4 class="text-2xl font-semibold mb-4">Workshops & Cursos 📚</h4>
+            <div id="eventsfromthiscategory" class="flex">
+                <div id="event1" class="flex items-center justify-between">
+                    <div class="w-1/3">
+                        <img src="imgs/events/basket.jpg" alt="" class="rounded">
+                        <h4 class="font-semibold">Oficina de Fotografia para Iniciantes</h4>
+                        <p>Aprenda a capturar momentos únicos com técnicas profissionais. Um workshop completo para quem quer dominar os primeiros passos da fotografia digital.</p>
+                    </div>
+                    <div id="info">
+                        <p><span class="font-semibold">Horário: </span> 14h00</p>
+                        <p class="mb-4"><span class="font-semibold">Horário: </span>20 de Setembro</p>
+
+                        <button class="p-2 bg-orange-600 text-orange-50 hover:bg-orange-700 rounded-md font-semibold"><a href="">Saiba mais!</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="studycourses" class="p-4 border rounded-sm mb-6">
+            <h4 class="text-2xl font-semibold mb-4">Esporte & Lazer 🏀</h4>
+            <div id="eventsfromthiscategory" class="flex">
+                <div id="event1" class="flex items-center justify-between">
+                    <div class="w-1/3">
+                        <img src="imgs/events/workshop.jpg" alt="" class="rounded">
+                        <h4 class="font-semibold">Torneio de Basquete 3x3</h4>
+                        <p>Aprenda a capturar momentos únicos com técnicas profissionais. Um workshop completo para quem quer dominar os primeiros passos da fotografia digital.</p>
+                    </div>
+                    <div id="info">
+                        <p><span class="font-semibold">Horário: </span> 09h30</p>
+                        <p class="mb-4"><span class="font-semibold">Horário: </span>22 de setembro</p>
+
+                        <button class="p-2 bg-orange-600 text-orange-50 hover:bg-orange-700 rounded-md font-semibold"><a href="">Saiba mais!</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+     <footer class="flex flex-col p-4 justify-between items-center bg-orange-600 rounded-md ">
+        <img src="imgs/favico.png" alt="" width="200px">
+        <p class="text-orange-50 font-light mb-2">Sua plataforma de eventos!</p>
+
+        <p class="text-orange-50 font-light">©2025 FESTIFY | All Rights Reserved</p>
+     </footer>
+</body>
+</html>
